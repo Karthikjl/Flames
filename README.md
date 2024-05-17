@@ -1,6 +1,6 @@
 # Try this -> [Click here](https://karthikjl.github.io/Flames/)
 
-#Html 
+# Html 
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +94,7 @@
 </html>
 ```
 
-#Css 
+# Css 
 ```
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 body {
