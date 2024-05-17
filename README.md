@@ -1,2 +1,3 @@
-Try this -> # Link
-[Click here]([https://www.google.com](https://karthikjl.github.io/Flames/)
+Try this -> 
+# Link
+[Click here](https://karthikjl.github.io/Flames/)
