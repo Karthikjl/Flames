@@ -1,2 +1,1 @@
-# Try this -> 
-[Click here](https://karthikjl.github.io/Flames/)
+# Try this -> [Click here](https://karthikjl.github.io/Flames/)
