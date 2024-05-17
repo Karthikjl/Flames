@@ -1,3 +1,2 @@
-Try this -> 
-# Link
+# Try this -> 
 [Click here](https://karthikjl.github.io/Flames/)
