@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>FLAMES</h1>
+    <div id="main">
+        <form id="flamesForm">
+            <label for="yourName">Your Name:</label>
+            <input type="text" id="yourName" name="yourName" required>
+            <br><br>
+            <label for="partnerName">Partner's Name:</label>
+            <input type="text" id="partnerName" name="partnerName" required>
+            <br><br>
+            <button type="submit">Calculate Flames</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById("flamesForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var yourName = document.getElementById("yourName").value.toLowerCase();
+            var partnerName = document.getElementById("partnerName").value.toLowerCase();
+            var flames = "flames";
+
+            // Remove common characters
+            for (var i = 0; i < yourName.length; i++) {
+                for (var j = 0; j < partnerName.length; j++) {
+                    if (yourName[i] === partnerName[j]) {
+                        yourName = yourName.replace(yourName[i], '');
+                        partnerName = partnerName.replace(partnerName[j], '');
+                        i--;
+                        break;
+                    }
+                }
+            }
+
+            // Calculate remaining characters
+            var remainingChars = yourName + partnerName;
+
+            // Calculate flames
+            while (flames.length > 1) {
+                var index = remainingChars.length % flames.length;
+                if (index === 0) {
+                    flames = flames.substring(0, flames.length - 1);
+                } else {
+                    flames = flames.substring(index) + flames.substring(0, index - 1);
+                }
+            }
+
+            // Determine the relationship
+            var result;
+            switch (flames) {
+                case 'f':
+                    result = "Friendship🫂";
+                    break;
+                case 'l':
+                    result = "Love💖";
+                    break;
+                case 'a':
+                    result = "Affection😍";
+                    break;
+                case 'm':
+                    result = "Marriage🤵👰";
+                    break;
+                case 'e':
+                    result = "Enemy😈";
+                    break;
+                case 's':
+                    result = "Sibling🧑👧";
+                    break;
+                default:
+                    result = "Error";
+            }
+
+            // Display the result
+            document.getElementById("result").innerHTML = "</br></br>The relationship between " +
+                document.getElementById("yourName").value.toLowerCase() + " and " +
+                document.getElementById("partnerName").value.toLowerCase() + " is " + result;
+        });
+    </script>
+</body>
+
+</html>
